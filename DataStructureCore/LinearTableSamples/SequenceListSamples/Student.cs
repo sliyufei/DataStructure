@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DataStructureCore.LinearTableSamples.LinkedList.SingleLinkedListSamples
+namespace DataStructureCore.LinearTableSamples.SequenceListSamples
 {
     public class Student
     {

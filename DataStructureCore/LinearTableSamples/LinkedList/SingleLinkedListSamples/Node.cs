@@ -1,10 +1,15 @@
 ﻿using System;
 namespace DataStructureCore.LinearTableSamples.LinkedList.SingleLinkedListSamples
 {
-    public class Node
+    public class Node<T>
     {
-        public Node()
+        public T Data { get; set; }
+
+        public Node<T> Next { get; set; }
+
+        public Node(T data)
         {
+            Data = data;
         }
     }
 }
