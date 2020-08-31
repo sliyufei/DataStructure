@@ -117,10 +117,12 @@ namespace DataStructureCore.LinearTableSamples.SingleLinkedListSamples.SingleLin
                    
                     if (index == 0)
                     {
+                        //移动头指针
                         First = currentNode.Next;
                     }
                     else if (index== this.Length - 1)
                     {
+                        //移动尾指针
                         beforeNode.Next = null;
                         Last = beforeNode;
                     }
