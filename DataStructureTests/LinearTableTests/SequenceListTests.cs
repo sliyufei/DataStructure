@@ -33,7 +33,7 @@ namespace DataStructureTests.LinearTableTests
 
             var sqList = new SequenceList<Student>(students);
 
-           var student= sqList.GetElement(2);
+            var student = sqList.GetElement(2);
         }
 
         [Fact]
