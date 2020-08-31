@@ -128,6 +128,26 @@ namespace DataStructureTests.LinearTableTests
             singleLinkedList.Delete(2);
         }
 
+        [Fact]
+        public void Reverse()
+        {
+            var students = new Student[]
+            {
+                new Student{ No=1,Name="李1",Score=22.1},
+                new Student{ No=2,Name="李2",Score=32.3},
+                new Student{ No=3,Name="李3",Score=42.5}
+            };
+
+            var singleLinkedList = new SingleLinkedList<Student>();
+
+            foreach (var student in students)
+            {
+                singleLinkedList.TailInsert(new Node<Student>(student));
+            }
+
+            singleLinkedList.Reverse();
+        }
+
 
 
     }

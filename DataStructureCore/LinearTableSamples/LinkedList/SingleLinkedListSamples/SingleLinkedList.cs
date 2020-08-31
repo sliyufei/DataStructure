@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 using DataStructureCore.LinearTableSamples.LinkedList.SingleLinkedListSamples;
 
 namespace DataStructureCore.LinearTableSamples.SingleLinkedListSamples.SingleLinkedList
@@ -70,15 +71,15 @@ namespace DataStructureCore.LinearTableSamples.SingleLinkedListSamples.SingleLin
         {
             if (IsEmpty)
             {
-                First = node;
-                Last = node;
+                this.First = node;
+                this.Last = node;
 
             }
             else
             {
                 //把头指针指向的节点放到插入节点之后，再把插入节点放到头指针后面
-                node.Next = First;
-                First = node;
+                node.Next = this.First;
+                this.First = node;
 
             }
             this.Length++;
@@ -114,13 +115,13 @@ namespace DataStructureCore.LinearTableSamples.SingleLinkedListSamples.SingleLin
             {
                 if (i == index)
                 {
-                   
+
                     if (index == 0)
                     {
                         //移动头指针
                         First = currentNode.Next;
                     }
-                    else if (index== this.Length - 1)
+                    else if (index == this.Length - 1)
                     {
                         //移动尾指针
                         beforeNode.Next = null;
@@ -140,6 +141,28 @@ namespace DataStructureCore.LinearTableSamples.SingleLinkedListSamples.SingleLin
                 currentNode = currentNode.Next;
                 i++;
             }
+        }
+
+        public void Reverse()
+        {
+            var tmpList = new SingleLinkedList<T>();
+            var currentNode = First;
+
+            while (currentNode != null)
+            {
+                var node = Clone(currentNode);
+                node.Next = null;
+                tmpList.HeadInsert(node);
+
+                currentNode = currentNode.Next;
+            }
+            First = tmpList.First;
+            Last = tmpList.Last;
+        }
+
+        private Node<T> Clone(Node<T> node)
+        {
+            return new Node<T>(node.Data); 
         }
 
     }
