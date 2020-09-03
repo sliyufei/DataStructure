@@ -57,8 +57,17 @@ namespace DataStructureTests.LinearTableTests
 
             foreach (var student in students)
             {
-                doubleLinkedList.Insert(new Node<Student>(student),1);
+                doubleLinkedList.TailInsert(new Node<Student>(student));
             }
+
+            var insertStudent = new Student
+            {
+                No = 4,
+                Name = "李4",
+                Score = 44.4
+            };
+
+            doubleLinkedList.Insert(new Node<Student>(insertStudent), 1);
 
         }
 

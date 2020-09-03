@@ -1,7 +1,7 @@
 ﻿using System;
-namespace DataStructureCore.LinearTableSamples.LinkedList.DoubleLinkedListSamples
+namespace DataStructureCore.LinearTableSamples.LinkedList.CircularLinkedListSamples
 {
-    public class DoubleLinkedList<T>
+    public class CircularLinkedList<T>
     {
         public Node<T> First { get; set; }
 
@@ -14,22 +14,11 @@ namespace DataStructureCore.LinearTableSamples.LinkedList.DoubleLinkedListSample
             get { return First == null; }
         }
 
-        public void Print()
-        {
-            var currentNode = First;
-
-            while (currentNode != Last)
-            {
-                currentNode = currentNode.Next;
-            }
-
-        }
-
         public Node<T> GetElement(int index)
         {
             var i = 0;
             var currentNode = First;
-            while (currentNode != Last && i < index)
+            while (currentNode != null && i < index)
             {
                 currentNode = currentNode.Next;
                 i++;
@@ -56,79 +45,62 @@ namespace DataStructureCore.LinearTableSamples.LinkedList.DoubleLinkedListSample
                 return index;
             else
                 return -1;
-
         }
 
-
-        /// <summary>
-        /// 头插法
-        /// </summary>
-        /// <param name="node"></param>
         public void HeadInsert(Node<T> node)
         {
             if (IsEmpty)
             {
                 this.First = node;
                 this.Last = node;
+                this.Last.Next = this.First;
 
             }
             else
             {
-                //新插入节点的next指向原链表的第一个节点，原链表的第一个节点的previous指向插入节点
+                //把头指针指向的节点放到插入节点之后，再把插入节点放到头指针后面
                 node.Next = this.First;
-                this.First.Previous = node;
                 this.First = node;
+                this.Last.Next = this.First;
 
             }
             this.Length++;
-
         }
 
-        /// <summary>
-        /// 尾插法
-        /// </summary>
-        /// <param name="node"></param>
+
         public void TailInsert(Node<T> node)
         {
             if (IsEmpty)
             {
                 First = node;
                 Last = node;
+                this.Last.Next = this.First;
 
             }
             else
             {
                 Last.Next = node;
-                node.Previous = this.Last;
                 Last = node;
+                this.Last.Next = this.First;
             }
-            this.Length++;
 
+            this.Length++;
         }
 
-        public void Insert(Node<T> node,int index)
+        public void Insert(Node<T> node, int index)
         {
             if (index == 0)
             {
                 this.HeadInsert(node);
             }
-            else if (index==this.Length-1)
+            else if (index == this.Length - 1)
             {
                 this.TailInsert(node);
             }
             else
             {
-                //建议画图，文字不好描述
                 var currentNode = this.GetElement(index);
-
-                //插入节点前趋节点指向当前节点，插入节点的后趋节点指向当前节点的下一个节点
                 node.Next = currentNode.Next;
-                node.Previous = currentNode;
-
-                //把当前节点的下一个节点的前趋节点指向插入节点
-                currentNode.Next.Previous = node;
-
-                //把当前节点的后趋节点指向插入节点
                 currentNode.Next = node;
 
             }
@@ -141,25 +113,43 @@ namespace DataStructureCore.LinearTableSamples.LinkedList.DoubleLinkedListSample
 
         public void Delete(int index)
         {
+            var i = 0;
+            var currentNode = First;
+            Node<T> beforeNode = First;
+            while (currentNode != null)
+            {
+                if (i == index)
+                {
 
-            if (index==0)
-            {
-                this.First.Next.Previous = null;
-                this.First = this.First.Next;
-            }
-            else if (index == this.Length-1)
-            {
-                this.Last.Previous.Next = null;
-                this.Last = this.Last.Previous;
-            }
-            else
-            {
-                var deleteNode = this.GetElement(index);
+                    if (index == 0)
+                    {
+                        //移动头指针
+                        First = currentNode.Next;
+                        this.Last.Next = this.First;
+                    }
+                    else if (index == this.Length - 1)
+                    {
+                        //移动尾指针
+                        beforeNode.Next = null;
+                        Last = beforeNode;
+                        this.Last.Next = this.First;
+                    }
+                    else
+                    {
+                        //指针域跳过当前节点
+                        beforeNode.Next = currentNode.Next;
+                    }
 
-                deleteNode.Previous.Next = deleteNode.Next;
-                deleteNode.Next.Previous = deleteNode.Previous;
+                    this.Length--;
+                    return;
+                }
+
+                beforeNode = currentNode;
+                currentNode = currentNode.Next;
+                i++;
             }
-            this.Length--;
         }
+
+
     }
 }

@@ -10,6 +10,7 @@
     <Folder Include="LinearTableSamples\LinkedList\SingleLinkedListSamples\" />
     <Folder Include="LinearTableSamples\SequenceListSamples\" />
     <Folder Include="LinearTableSamples\LinkedList\DoubleLinkedListSamples\" />
+    <Folder Include="LinearTableSamples\LinkedList\CircularLinkedListSamples\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
