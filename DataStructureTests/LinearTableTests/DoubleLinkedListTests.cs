@@ -1,5 +1,6 @@
 ﻿using System;
 using DataStructureCore.LinearTableSamples.LinkedList.DoubleLinkedListSamples;
+using DataStructureCore.Model;
 using Xunit;
 
 namespace DataStructureTests.LinearTableTests

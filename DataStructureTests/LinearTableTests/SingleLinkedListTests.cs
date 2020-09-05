@@ -1,5 +1,6 @@
 ﻿using DataStructureCore.LinearTableSamples.LinkedList.SingleLinkedListSamples;
 using DataStructureCore.LinearTableSamples.SingleLinkedListSamples.SingleLinkedList;
+using DataStructureCore.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;

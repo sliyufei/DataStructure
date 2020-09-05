@@ -15,4 +15,7 @@
   <ItemGroup>
     <ProjectReference Include="..\DataStructureCore\DataStructureCore.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="StackTests\" />
+  </ItemGroup>
 </Project>
