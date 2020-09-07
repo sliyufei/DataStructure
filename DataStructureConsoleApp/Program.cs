@@ -7,8 +7,15 @@ namespace DataStructureConsoleApp
     {
         static void Main(string[] args)
         {
-            var hanoiSamples = new HanoiSamples();
-            hanoiSamples.Hanoi(3,"塔1","塔2","塔3");
+            // var hanoiSamples = new HanoiSamples();
+            // hanoiSamples.Hanoi(3,"塔1","塔2","塔3");
+           
+            var mazeSamples=new  MazeSamples();
+            mazeSamples.PrintMaze();
+            
+            
+            
         }
+
     }
 }

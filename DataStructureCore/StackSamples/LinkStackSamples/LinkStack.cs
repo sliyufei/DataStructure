@@ -24,7 +24,7 @@ namespace DataStructureCore.StackSamples.LinkStackSamples
             if (this.IsEmpty)
                 return false;
 
-             node = this.front;
+            node = this.front;
             this.front = this.front.Next;
             return true;
 
