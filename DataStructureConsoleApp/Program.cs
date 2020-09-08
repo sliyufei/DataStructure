@@ -12,6 +12,9 @@ namespace DataStructureConsoleApp
            
             var mazeSamples=new  MazeSamples();
             mazeSamples.PrintMaze();
+            mazeSamples.Move();
+            Console.WriteLine("------------------------------------------");
+            mazeSamples.PrintTrace();
             
             
             
