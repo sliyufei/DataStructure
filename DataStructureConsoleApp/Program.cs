@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using DataStructureCore.StackSamples;
 
 namespace DataStructureConsoleApp
@@ -15,9 +16,8 @@ namespace DataStructureConsoleApp
             mazeSamples.Move();
             Console.WriteLine("------------------------------------------");
             mazeSamples.PrintTrace();
-            
-            
-            
+
+         
         }
 
     }

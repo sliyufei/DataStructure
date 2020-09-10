@@ -13,7 +13,6 @@
     <Folder Include="LinearTableSamples\LinkedList\CircularLinkedListSamples\" />
     <Folder Include="StackSamples\" />
     <Folder Include="StackSamples\ArrayStackSamples\" />
-    <Folder Include="Model\" />
     <Folder Include="StackSamples\LinkStackSamples\" />
   </ItemGroup>
   <ItemGroup>
