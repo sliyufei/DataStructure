@@ -12,7 +12,7 @@ namespace DataStructureCore.StackSamples
         private int[,] maze;
 
         /// <summary>
-        /// 0 可以走  1不可以走
+        /// 0 可以走  1不可以走  2走的路径
         /// </summary>
         public MazeSamples()
         {
