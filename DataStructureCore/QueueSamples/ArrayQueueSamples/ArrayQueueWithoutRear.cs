@@ -4,30 +4,31 @@ using System.Text;
 
 namespace DataStructureCore.QueueSamples.ArrayQueueSamples
 {
-    public class ArrayQueue<T>
+    public class ArrayQueueWithoutRear<T>
     {
-        //出队
-        private int front;
 
-        //入队
-        private int rear;
+        private int front;
 
         private int size;
 
         private T[] datas;
 
-        public ArrayQueue(int size)
+        private int length;
+
+        public ArrayQueueWithoutRear(int size)
         {
             this.front = 0;
-            this.rear = 0;
             this.size = size;
             this.datas = new T[size];
+            this.length = 0;
         }
 
 
-        public bool IsEmpty { get { return front == rear; } }
+        private int Rear { get { return (front + length) % size; } }
 
-        public bool IsFull { get { return (rear + 1) % size == front; } }
+        public bool IsEmpty { get { return length == 0; } }
+
+        public bool IsFull { get { return length == size; } }
 
 
         public bool Enqueue(T data)
@@ -35,10 +36,9 @@ namespace DataStructureCore.QueueSamples.ArrayQueueSamples
             if (IsFull)
                 return false;
 
-            datas[rear] = data;
+            datas[Rear] = data;
 
-            //队尾+1取余得到下一个元素放置的索引
-            rear = (rear + 1) % size;
+            this.length++;
             return true;
         }
 
@@ -54,8 +54,8 @@ namespace DataStructureCore.QueueSamples.ArrayQueueSamples
             datas[front] = default(T);
 
             front = (front + 1) % size;
+            this.length--;
             return true;
         }
-
     }
 }
