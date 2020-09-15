@@ -19,7 +19,7 @@ namespace DataStructureConsoleApp
             // mazeSamples.PrintTrace();
 
             // var treeDataArr = new int[] {7, 4, 1, 5, 16, 8, 11, 12, 15, 9, 2};
-
+            //
             // var binaryTree = new BinaryTree();
             // binaryTree.BuildTree(treeDataArr);
             // Console.WriteLine("前序遍历:");
@@ -35,13 +35,27 @@ namespace DataStructureConsoleApp
             // Console.WriteLine($"搜索次数{searchCount}");
             
             
-            var treeDataArr = new int[] {7, 4, 1, 5, 16, 8, 11, 12, 15, 9, 2};
-            var inOrderThreadTree = new InOrderThreadBinaryTree();
-            inOrderThreadTree.BuildTree(treeDataArr);
+            // var treeDataArr = new int[] {7, 4, 1, 5, 16, 8, 11, 12, 15, 9, 2};
+            // var inOrderThreadTree = new InOrderThreadBinaryTree();
+            // inOrderThreadTree.BuildTree(treeDataArr);
+            //
+            // inOrderThreadTree.CreateInOrderThread(inOrderThreadTree.RootNode);
+            //
+            // inOrderThreadTree.InOrder(inOrderThreadTree.ThreadRooNode.LeftNode);
+            
+            
+            var treeDataArr = new int[] {7, 4, 1, 5, 16, 8, 11, 12, 15,14,13, 9, 19,20};
 
-            inOrderThreadTree.CreateInOrderThread(inOrderThreadTree.RootNode);
-
-            inOrderThreadTree.InOrder(inOrderThreadTree.ThreadRooNode.LeftNode);
+            var binaryTree = new BinaryTree();
+            binaryTree.BuildTree(treeDataArr);
+           
+            Console.WriteLine("中序遍历:");
+            binaryTree.InOrder(binaryTree.rootNode);
+            Console.WriteLine();
+           
+            // binaryTree.DeleteNode(1);
+            // binaryTree.DeleteNode(19);
+            binaryTree.DeleteNode(16);
 
 
         }

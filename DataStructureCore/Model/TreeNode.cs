@@ -2,7 +2,7 @@ namespace DataStructureCore.Model
 {
     public class TreeNode
     {
-        public readonly int Value;
+        public  int Value { get; set; }
         public TreeNode LeftNode { get; set; }
         public TreeNode RightNode { get; set; }
 
