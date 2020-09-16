@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using DataStructureCore.BinaryTreeSamples;
 using DataStructureCore.StackSamples;
 
@@ -44,18 +45,18 @@ namespace DataStructureConsoleApp
             // inOrderThreadTree.InOrder(inOrderThreadTree.ThreadRooNode.LeftNode);
             
             
-            var treeDataArr = new int[] {7, 4, 1, 5, 16, 8, 11, 12, 15,14,13, 9, 19,20};
-
-            var binaryTree = new BinaryTree();
-            binaryTree.BuildTree(treeDataArr);
-           
-            Console.WriteLine("中序遍历:");
-            binaryTree.InOrder(binaryTree.rootNode);
-            Console.WriteLine();
-           
+            // var treeDataArr = new int[] {7, 4, 1, 5, 16, 8, 11, 12, 15,14,13, 9, 19,20};
+            //
+            // var binaryTree = new BinaryTree();
+            // binaryTree.BuildTree(treeDataArr);
+            //
+            // Console.WriteLine("中序遍历:");
+            // binaryTree.InOrder(binaryTree.rootNode);
+            // Console.WriteLine();
+            //
             // binaryTree.DeleteNode(1);
             // binaryTree.DeleteNode(19);
-            binaryTree.DeleteNode(16);
+            // binaryTree.DeleteNode(16);
 
 
         }
