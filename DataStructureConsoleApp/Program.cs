@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using DataStructureCore.BinaryTreeSamples;
+using DataStructureCore.Model;
+using DataStructureCore.Sort;
 using DataStructureCore.StackSamples;
 
 namespace DataStructureConsoleApp
@@ -57,6 +59,18 @@ namespace DataStructureConsoleApp
             // binaryTree.DeleteNode(1);
             // binaryTree.DeleteNode(19);
             // binaryTree.DeleteNode(16);
+
+            // {
+            //     var arr = new int[] {3, 6, 7, 4, 9};
+            //     var insertSort = new InsertSort();
+            //     insertSort.Sort(arr, SortDirection.Desc);
+            // }
+            
+            {
+                var arr = new int[] {3, 6, 7, 4, 9};
+                var shellSort = new ShellSort();
+                shellSort.Sort(arr);
+            }
 
 
         }
