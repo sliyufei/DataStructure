@@ -66,11 +66,19 @@ namespace DataStructureConsoleApp
             //     insertSort.Sort(arr, SortDirection.Desc);
             // }
             
+            // {
+            //     var arr = new int[] {3, 6, 7, 4, 9};
+            //     var shellSort = new ShellSort();
+            //     shellSort.Sort(arr);
+            // }
+            
+            
             {
                 var arr = new int[] {3, 6, 7, 4, 9};
-                var shellSort = new ShellSort();
-                shellSort.Sort(arr);
+                var bubbleSort = new BubbleSort();
+                bubbleSort.Sort(arr);
             }
+            
 
 
         }
