@@ -16,7 +16,7 @@ namespace DataStructureCore.Sort
             Console.WriteLine();
 
             //找到最后一个元素和堆顶的元素进行交换
-            for (int i = arr.Length - 1; i >= 0; i--)
+            for (int i = arr.Length - 1; i > 0; i--)
             {
                 Swap(arr, 0, i);
 
@@ -27,7 +27,6 @@ namespace DataStructureCore.Sort
                 ShowArr(arr);
                 Console.WriteLine();
             }
-
         }
 
 
@@ -64,14 +63,15 @@ namespace DataStructureCore.Sort
 
             var max = i;
 
+            //如果左节点在序列内才排序
             //如果左节点比分支节点值大就把最大值索引赋值成左节点
-            if (arr[left] > arr[i])
+            if (left < n && arr[left] > arr[i])
             {
                 max = left;
             }
 
             //如果右节点比上一步比较完的值还大就把最大值索引赋值成右节点
-            if (right > n - 1 && arr[right] > arr[max])
+            if (right < n && arr[right] > arr[max])
             {
                 max = right;
             }
