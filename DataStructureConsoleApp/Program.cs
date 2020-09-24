@@ -85,10 +85,16 @@ namespace DataStructureConsoleApp
             //    quickSort.Sort(arr, 0, arr.Length - 1);
             //}
 
+            // {
+            //     var arr = new int[] { 3, 6, 7, 4, 9 };
+            //     var heapSort = new HeapSort();
+            //     heapSort.Sort(arr);
+            // }
+            
             {
                 var arr = new int[] { 3, 6, 7, 4, 9 };
-                var heapSort = new HeapSort();
-                heapSort.Sort(arr);
+                var selectSort = new SelectSort();
+                selectSort.Sort(arr);
             }
 
         }
