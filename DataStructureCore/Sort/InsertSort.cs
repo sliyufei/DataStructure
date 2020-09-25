@@ -3,7 +3,7 @@ using DataStructureCore.Model;
 
 namespace DataStructureCore.Sort
 {
-    public class InsertSort
+    public class InsertSort : BaseSort
     {
         public void Sort(int[] arr, SortDirection sortDirection)
         {
@@ -44,12 +44,6 @@ namespace DataStructureCore.Sort
             return false;
         }
 
-        private void ShowArr(int[] arr)
-        {
-            foreach (var item in arr)
-            {
-                Console.Write($"[{item}] ");
-            }
-        }
+      
     }
 }

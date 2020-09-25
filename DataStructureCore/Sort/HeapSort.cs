@@ -5,7 +5,7 @@ namespace DataStructureCore.Sort
     /// <summary>
     /// 把数组看成一颗完全二叉树，再使用堆这种数据结构，摆成大根堆
     /// </summary>
-    public class HeapSort
+    public class HeapSort : BaseSort
     {
         public void Sort(int[] arr)
         {
@@ -86,19 +86,6 @@ namespace DataStructureCore.Sort
             }
         }
 
-        private void Swap(int[] arr, int x, int y)
-        {
-            var temp = arr[x];
-            arr[x] = arr[y];
-            arr[y] = temp;
-        }
-
-        private void ShowArr(int[] arr)
-        {
-            foreach (var item in arr)
-            {
-                Console.Write($"[{item}] ");
-            }
-        }
+      
     }
 }

@@ -2,7 +2,7 @@ using System;
 
 namespace DataStructureCore.Sort
 {
-    public class SelectSort
+    public class SelectSort : BaseSort
     {
         public void Sort(int[] arr)
         {
@@ -36,20 +36,7 @@ namespace DataStructureCore.Sort
             return k;
         }
         
-        private void Swap(int[] arr, int x, int y)
-        {
-            var temp = arr[x];
-            arr[x] = arr[y];
-            arr[y] = temp;
-        }
-
-        private void ShowArr(int[] arr)
-        {
-            foreach (var item in arr)
-            {
-                Console.Write($"[{item}] ");
-            }
-        }
+     
         
     }
 }

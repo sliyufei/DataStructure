@@ -3,7 +3,7 @@ using DataStructureCore.Model;
 
 namespace DataStructureCore.Sort
 {
-    public class ShellSort
+    public class ShellSort : BaseSort
     {
         private int Factor
         {
@@ -40,12 +40,6 @@ namespace DataStructureCore.Sort
             }
         }
 
-        private void ShowArr(int[] arr)
-        {
-            foreach (var item in arr)
-            {
-                Console.Write($"[{item}] ");
-            }
-        }
+     
     }
 }

@@ -2,7 +2,7 @@ using System;
 
 namespace DataStructureCore.Sort
 {
-    public class BubbleSort
+    public class BubbleSort : BaseSort
     {
         public void Sort(int[] arr)
         {
@@ -33,13 +33,7 @@ namespace DataStructureCore.Sort
             }
         }
         
-        private void ShowArr(int[] arr)
-        {
-            foreach (var item in arr)
-            {
-                Console.Write($"[{item}] ");
-            }
-        }
+    
         
     }
 }

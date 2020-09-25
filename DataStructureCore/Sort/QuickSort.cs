@@ -2,7 +2,7 @@ using System;
 
 namespace DataStructureCore.Sort
 {
-    public class QuickSort
+    public class QuickSort : BaseSort
     {
         private int count;
         public void Sort(int[] arr, int left, int right)
@@ -53,12 +53,6 @@ namespace DataStructureCore.Sort
             Sort(arr, i + 1, right);
         }
 
-        private void ShowArr(int[] arr)
-        {
-            foreach (var item in arr)
-            {
-                Console.Write($"[{item}] ");
-            }
-        }
+    
     }
 }
