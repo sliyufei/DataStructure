@@ -10,22 +10,31 @@ namespace DataStructureCore.Sort
     public class RadixSort : BaseSort
     {
 
-        private Dictionary<int, SingleLinkedList<string>> distributionResult = new Dictionary<int, SingleLinkedList<string>>(10);
+        /// <summary>
+        /// 什么进制
+        /// </summary>
+        private static int radix = 10;
+
+
+        private SingleLinkedList<string>[] distributionResult = new SingleLinkedList<string>[radix];
 
         private SingleLinkedList<string> collectResult = new SingleLinkedList<string>();
 
-        private int radix;
+        /// <summary>
+        /// 数字的最大位数
+        /// </summary>
+        private int d;
 
         public void Sort(int[] arr)
         {
             //获取最大的Length
             InitData(arr);
 
-            for (int i = radix; i > 0; i--)
+            for (int i = d; i > 0; i--)
             {
                 //第一次不需要清空分配操作的数据
-                if (i != radix)
-                    distributionResult = new Dictionary<int, SingleLinkedList<string>>(10);
+                if (i != d)
+                    distributionResult = new SingleLinkedList<string>[radix];
 
                 //分配
                 Distribution(i);
@@ -51,12 +60,14 @@ namespace DataStructureCore.Sort
             //清空之前存的数据
             collectResult = new SingleLinkedList<string>();
 
-            foreach (var keyValue in distributionResult.OrderBy(o => o.Key))
+            foreach (var item in distributionResult)
             {
-                collectResult.TailInsert(keyValue.Value);
+                if (item != null && !item.IsEmpty)
+                {
+                    collectResult.TailInsert(item);
+                }
 
             }
-
 
         }
 
@@ -68,10 +79,7 @@ namespace DataStructureCore.Sort
             {
                 var positionValue = GetPositionValue(currentNode.Data, position);
 
-                if (!distributionResult.ContainsKey(positionValue))
-                {
-                    distributionResult[positionValue]= new SingleLinkedList<string>();
-                }
+                distributionResult[positionValue] = new SingleLinkedList<string>();
 
                 var linkedList = distributionResult[positionValue];
 
@@ -80,7 +88,7 @@ namespace DataStructureCore.Sort
                 currentNode = currentNode.Next;
             }
         }
-        
+
         /// <summary>
         /// 获取指定位置上的值
         /// </summary>
@@ -89,7 +97,7 @@ namespace DataStructureCore.Sort
         /// <returns></returns>
         private int GetPositionValue(string value, int position)
         {
-          
+
             var positionValue = Convert.ToInt32(Char.ConvertFromUtf32(value[position - 1]));
 
             return positionValue;
@@ -101,22 +109,22 @@ namespace DataStructureCore.Sort
             {
                 var tmp = arr[i].ToString();
 
-                if (radix < tmp.Length)
-                    radix = tmp.Length;
+                if (d < tmp.Length)
+                    d = tmp.Length;
             }
 
             for (int i = 0; i < arr.Length; i++)
             {
-                var tmp = arr[i].ToString().PadLeft(radix, '0'); ;
-              
+                var tmp = arr[i].ToString().PadLeft(d, '0'); ;
+
                 collectResult.TailInsert(new Node<string>(tmp));
 
-                if (radix < tmp.Length)
-                    radix = tmp.Length;
+                if (d < tmp.Length)
+                    d = tmp.Length;
             }
 
         }
 
-     
+
     }
 }
