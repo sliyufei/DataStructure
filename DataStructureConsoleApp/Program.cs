@@ -103,6 +103,12 @@ namespace DataStructureConsoleApp
             //    mergeSort.Sort(arr);
             //}
 
+            {
+                var arr = new int[] { 123, 627, 47, 4, 9999 };
+                var radixSort = new RadixSort();
+                radixSort.Sort(arr);
+            }
+
         }
     }
 }

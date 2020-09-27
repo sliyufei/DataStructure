@@ -105,6 +105,22 @@ namespace DataStructureCore.LinearTableSamples.SingleLinkedListSamples.SingleLin
             this.Length++;
         }
 
+        public void TailInsert(SingleLinkedList<T> linkList)
+        {
+            if (IsEmpty)
+            {
+                First = linkList.First;
+                Last = linkList.Last;
+
+            }
+            else
+            {
+                Last.Next = linkList.First;
+                Last = linkList.Last;
+            }
+            this.Length += linkList.Length;
+        }
+
 
         public void Delete(int index)
         {

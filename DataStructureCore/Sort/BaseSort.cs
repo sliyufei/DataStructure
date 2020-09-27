@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataStructureCore.Sort
 {
-    public class BaseSort
+    public abstract class BaseSort
     {
         protected void Swap(int[] arr, int x, int y)
         {

@@ -150,6 +150,43 @@ namespace DataStructureTests.LinearTableTests
         }
 
 
+        [Fact]
+        public void Union()
+        {
+            var students1 = new Student[]
+            {
+                new Student{ No=1,Name="李1",Score=22.1},
+                new Student{ No=2,Name="李2",Score=32.3},
+                new Student{ No=3,Name="李3",Score=42.5}
+            };
+
+            var singleLinkedList1 = new SingleLinkedList<Student>();
+
+            foreach (var student in students1)
+            {
+                singleLinkedList1.TailInsert(new Node<Student>(student));
+            }
+
+
+            var students2 = new Student[]
+           {
+                new Student{ No=4,Name="李4",Score=22.1},
+                new Student{ No=5,Name="李5",Score=32.3}
+           };
+
+            var singleLinkedList2 = new SingleLinkedList<Student>();
+
+            foreach (var student in students2)
+            {
+                singleLinkedList2.TailInsert(new Node<Student>(student));
+            }
+
+
+            singleLinkedList1.TailInsert(singleLinkedList2);
+
+        }
+
+
 
     }
 }
