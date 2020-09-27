@@ -30,8 +30,8 @@ namespace DataStructureCore.Sort
                 Merge(arr, i, i + length - 1, i + length * 2 - 1);
             }
 
-            //如果还有子序列就把他和之前的二路归并完的序列进行合并
-            if (i + length - 1 < arr.Length)
+            //如果还剩下至少2个待合并的序列(i+length是第二个序列的开始位置)
+            if (i + length  < arr.Length)
             {
                 Merge(arr, i, i + length - 1, arr.Length - 1);
             }
@@ -80,6 +80,14 @@ namespace DataStructureCore.Sort
             {
                 tmpArr[k] = arr[j];
                 j++;
+            }
+
+            //把排序好的元素放回到原序列
+            var h = left;
+            for (int g = 0; g < tmpArr.Length; g++)
+            {
+                arr[h] = tmpArr[g];
+                h++;
             }
 
         }

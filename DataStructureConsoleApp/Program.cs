@@ -97,11 +97,11 @@ namespace DataStructureConsoleApp
             //    selectSort.Sort(arr);
             //}
 
-            {
-                var arr = new int[] { 3, 6, 7, 4, 9 };
-                var mergeSort = new MergeSort();
-                mergeSort.Sort(arr);
-            }
+            //{
+            //    var arr = new int[] { 3, 6, 7, 4, 9 };
+            //    var mergeSort = new MergeSort();
+            //    mergeSort.Sort(arr);
+            //}
 
         }
     }
